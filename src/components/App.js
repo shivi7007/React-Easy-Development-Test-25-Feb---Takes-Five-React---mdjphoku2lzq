@@ -1,14 +1,27 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 import '../styles/App.css';
 const App = () => {
+  
+  let [nums, setNums] = useState(1);
+  
+  const Nextfuncthandel = () => {
+    nums = nums+1;
+    return nums;
+  }
+  
+  const Prevfuncthandel = () => {
+    nums = nums-1;
+    return nums;
+  }
+  
   const ShowContent = () => {
     return(
       <div id="number-display">
-        1<br> 2<br> 3</br> 4</br> 5</br>
+       {nums}
       </div>
-      <button id="back-button">Prev Page</button>
-      <button id="next-button">Next Page</button>
+      <button id="back-button" onClick={Prevfuncthandel}>Prev Page</button>
+      <button id="next-button" onClick={Nextfuncthandel}>Next Page</button>
     )
   }
 
