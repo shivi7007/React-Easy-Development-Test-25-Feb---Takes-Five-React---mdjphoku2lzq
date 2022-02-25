@@ -3,22 +3,20 @@ import React, {useState} from 'react'
 import '../styles/App.css';
 const App = () => {
   
-  let [nums, setNums] = useState(1);
+  let [nums, setNums] = useState([1, 2, 3, 4, 5]);
   
   const Nextfuncthandel = () => {
-    nums = nums+1;
-    return nums;
+      setNums([])
   }
   
   const Prevfuncthandel = () => {
-    nums = nums-1;
-    return nums;
+     setNums([])
   }
   
   const ShowContent = () => {
     return(
       <div id="number-display">
-       {nums}
+      {nums.map(num => (<div>{num}</div>))}
       </div>
       <button id="back-button" onClick={Prevfuncthandel}>Prev Page</button>
       <button id="next-button" onClick={Nextfuncthandel}>Next Page</button>
